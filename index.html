@@ -3,16 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMMANUVEL S | Portfolio</title>
+    <title>Immanuvel S | Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- React & ReactDOM CDN -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <!-- Babel for JSX compilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #070a13; }
@@ -23,10 +16,17 @@
 
     <div id="root"></div>
 
-    <script type="text/babel">
+    <!-- React, ReactDOM, and Lucide Icons loaded via ES Modules (No Babel compiler needed) -->
+    <script type="module">
+        import React from 'https://esm.sh/react@18.2.0';
+        import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
+        import * as lucide from 'https://esm.sh/lucide@0.344.0';
+
+        // Icon Helper Component
         const Icon = ({ name, className = "w-5 h-5" }) => {
-            const LucideIcon = lucide[name];
-            return LucideIcon ? <LucideIcon className={className} /> : null;
+            const camelCaseName = name.charAt(0).toUpperCase() + name.slice(1);
+            const LucideIcon = lucide[camelCaseName];
+            return LucideIcon ? React.createElement(LucideIcon, { className }) : null;
         };
 
         function App() {
@@ -38,7 +38,7 @@
                 phone: "+91 9092463152",
                 github: "https://github.com/Hackerone143",
                 linkedin: "https://linkedin.com/in/immanuvel-s-a6663b297",
-                summary: "Cybersecurity professional and Computer Science graduate with hands-on expertise in penetration testing, vulnerability assessment, and web application security analysis. Experienced in Python, Java, and PHP development, with a track record of delivering security-focused software projects."
+                summary: "Cybersecurity professional and Computer Science graduate with hands-on expertise in penetration testing, vulnerability assessment, and web application security analysis using Burp Suite, Nmap, Nessus, Wireshark, and Metasploit. Experienced in Python, Java, and PHP development, with a track record of delivering security-focused software projects."
             };
 
             const skills = [
@@ -87,7 +87,7 @@
             const experience = [
                 {
                     role: "Customer Support Associate",
-                    company: "Amazon (via Sutherland Global Services)",
+                    company: "Amazon (via Sutherland Global Services / Prompt Personnel)",
                     period: "Oct 2025 - Apr 2026",
                     bullets: [
                         "Delivered real-time live chat support to North American Amazon customers, resolving order, account, and technical queries.",
@@ -97,7 +97,7 @@
                 },
                 {
                     role: "Cybersecurity Intern",
-                    company: "Skill Forge Company / TN Skill (National Level Event)",
+                    company: "Skill Forge Company / TN Skill (Cybersecurity National Level Event)",
                     period: "2024 (Short-Term)",
                     bullets: [
                         "Participated in a national-level cybersecurity event and completed hands-on internship covering real-world threat analysis.",
@@ -106,175 +106,132 @@
                 }
             ];
 
-            return (
-                <div className="min-h-screen flex flex-col justify-between">
-                    {/* Sticky Navbar */}
-                    <header className="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur sticky top-0 z-50">
-                        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-                            <div className="flex items-center space-x-2">
-                                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span className="mono text-xs tracking-wider font-bold text-emerald-400">IMMANUVEL_S://SEC_PORTFOLIO</span>
-                            </div>
-                            <nav className="flex space-x-6 text-xs font-medium text-slate-400 mono">
-                                <a href="#about" className="hover:text-emerald-400 transition-colors">./about</a>
-                                <a href="#skills" className="hover:text-emerald-400 transition-colors">./skills</a>
-                                <a href="#experience" className="hover:text-emerald-400 transition-colors">./experience</a>
-                                <a href="#projects" className="hover:text-emerald-400 transition-colors">./projects</a>
-                            </nav>
-                        </div>
-                    </header>
+            return React.createElement('div', { className: "min-h-screen flex flex-col justify-between" },
+                // Header
+                React.createElement('header', { className: "border-b border-slate-800/80 bg-slate-950/70 backdrop-blur sticky top-0 z-50" },
+                    React.createElement('div', { className: "max-w-4xl mx-auto px-6 py-4 flex justify-between items-center" },
+                        React.createElement('div', { className: "flex items-center space-x-2" },
+                            React.createElement('span', { className: "h-2 w-2 rounded-full bg-emerald-500 animate-pulse" }),
+                            React.createElement('span', { className: "mono text-xs tracking-wider font-bold text-emerald-400" }, "IMMANUVEL_S://SEC_PORTFOLIO")
+                        ),
+                        React.createElement('nav', { className: "flex space-x-6 text-xs font-medium text-slate-400 mono" },
+                            React.createElement('a', { href: "#about", className: "hover:text-emerald-400 transition-colors" }, "./about"),
+                            React.createElement('a', { href: "#skills", className: "hover:text-emerald-400 transition-colors" }, "./skills"),
+                            React.createElement('a', { href: "#projects", className: "hover:text-emerald-400 transition-colors" }, "./projects"),
+                            React.createElement('a', { href: "#experience", className: "hover:text-emerald-400 transition-colors" }, "./experience")
+                        )
+                    )
+                ),
 
-                    {/* Main Container */}
-                    <main className="max-w-4xl mx-auto px-6 py-12 flex-grow space-y-24">
+                // Main Container
+                React.createElement('main', { className: "max-w-4xl mx-auto px-6 py-12 flex-grow space-y-24" },
+                    
+                    // About
+                    React.createElement('section', { id: "about", className: "py-4 space-y-6" },
+                        React.createElement('div', { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 text-xs font-medium mono" },
+                            React.createElement(Icon, { name: "ShieldAlert", className: "w-3.5 h-3.5" }), " Ready for Ethical Hacking & Secure Dev Operations"
+                        ),
+                        React.createElement('h1', { className: "text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight" }, profile.name),
+                        React.createElement('h2', { className: "text-xl font-semibold text-emerald-400 mono" }, `> ${profile.title}`),
+                        React.createElement('p', { className: "text-slate-400 leading-relaxed max-w-3xl" }, profile.summary),
                         
-                        {/* Hero Section */}
-                        <section id="about" className="py-4 space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 text-xs font-medium mono">
-                                <Icon name="ShieldAlert" className="w-3.5 h-3.5" /> Ready for Ethical Hacking & Secure Dev Operations
-                            </div>
-                            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
-                                {profile.name}
-                            </h1>
-                            <h2 className="text-xl font-semibold text-emerald-400 mono">
-                                &gt; {profile.title}
-                            </h2>
-                            <p className="text-slate-400 leading-relaxed max-w-3xl">
-                                {profile.summary}
-                            </p>
-                            
-                            {/* Contact Grid & Socials */}
-                            <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-400 mono">
-                                <span className="flex items-center gap-1.5"><Icon name="MapPin" className="w-3.5 h-3.5 text-slate-500" /> {profile.location}</span>
-                                <a href={`mailto:${profile.email}`} className="flex items-center gap-1.5 hover:text-emerald-400"><Icon name="Mail" className="w-3.5 h-3.5 text-slate-500" /> {profile.email}</a>
-                                <span className="flex items-center gap-1.5"><Icon name="Phone" className="w-3.5 h-3.5 text-slate-500" /> {profile.phone}</span>
-                            </div>
+                        React.createElement('div', { className: "flex flex-wrap gap-4 pt-2 text-xs text-slate-400 mono" },
+                            React.createElement('span', { className: "flex items-center gap-1.5" }, React.createElement(Icon, { name: "MapPin", className: "w-3.5 h-3.5 text-slate-500" }), profile.location),
+                            React.createElement('a', { href: `mailto:${profile.email}`, className: "flex items-center gap-1.5 hover:text-emerald-400" }, React.createElement(Icon, { name: "Mail", className: "w-3.5 h-3.5 text-slate-500" }), profile.email),
+                            React.createElement('span', { className: "flex items-center gap-1.5" }, React.createElement(Icon, { name: "Phone", className: "w-3.5 h-3.5 text-slate-500" }), profile.phone)
+                        ),
 
-                            <div className="flex gap-3 pt-2">
-                                <a href={profile.github} target="_blank" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all text-xs mono">
-                                    <Icon name="Github" className="w-4 h-4" /> GitHub
-                                </a>
-                                <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all text-xs mono">
-                                    <Icon name="Linkedin" className="w-4 h-4" /> LinkedIn
-                                </a>
-                            </div>
-                        </section>
+                        React.createElement('div', { className: "flex gap-3 pt-2" },
+                            React.createElement('a', { href: profile.github, target: "_blank", className: "flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all text-xs mono" },
+                                React.createElement(Icon, { name: "Github", className: "w-4 h-4" }), " GitHub"
+                            ),
+                            React.createElement('a', { href: profile.linkedin, target: "_blank", className: "flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all text-xs mono" },
+                                React.createElement(Icon, { name: "Linkedin", className: "w-4 h-4" }), " LinkedIn"
+                            )
+                        )
+                    ),
 
-                        {/* Skills Matrix */}
-                        <section id="skills" className="space-y-6 scroll-mt-20">
-                            <h2 className="text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2">
-                                <Icon name="Terminal" className="text-emerald-400" /> <span className="mono tracking-wide">01. Technical Skills Matrix</span>
-                            </h2>
-                            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                                {skills.map((skillGroup, index) => (
-                                    <div key={index} className="p-4 rounded-xl bg-slate-950 border border-slate-800/80">
-                                        <h3 className="font-bold text-xs uppercase tracking-wider text-slate-400 mb-3 mono flex items-center gap-1.5">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>{skillGroup.category}
-                                        </h3>
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {skillGroup.items.map((item, idx) => (
-                                                <span key={idx} className="text-[11px] font-medium text-slate-300 bg-slate-900 border border-slate-800 px-2 py-0.5 rounded mono">
-                                                    {item}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
+                    // Skills
+                    React.createElement('section', { id: "skills", className: "space-y-6 scroll-mt-20" },
+                        React.createElement('h2', { className: "text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2" },
+                            React.createElement(Icon, { name: "Terminal", className: "text-emerald-400" }), React.createElement('span', { className: "mono tracking-wide" }, "01. Technical Skills Matrix")
+                        ),
+                        React.createElement('div', { className: "grid sm:grid-cols-2 md:grid-cols-3 gap-4" },
+                            skills.map((group, gIdx) => 
+                                React.createElement('div', { key: gIdx, className: "p-4 rounded-xl bg-slate-950 border border-slate-800/80" },
+                                    React.createElement('h3', { className: "font-bold text-xs uppercase tracking-wider text-slate-400 mb-3 mono flex items-center gap-1.5" },
+                                        React.createElement('span', { className: "w-1.5 h-1.5 rounded-full bg-emerald-500" }), group.category
+                                    ),
+                                    React.createElement('div', { className: "flex flex-wrap gap-1.5" },
+                                        group.items.map((item, iIdx) => 
+                                            React.createElement('span', { key: iIdx, className: "text-[11px] font-medium text-slate-300 bg-slate-900 border border-slate-800 px-2 py-0.5 rounded mono" }, item)
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
 
-                        {/* Technical Projects */}
-                        <section id="projects" className="space-y-6 scroll-mt-20">
-                            <h2 className="text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2">
-                                <Icon name="Cpu" className="text-emerald-400" /> <span className="mono tracking-wide">02. Security & Engineering Builds</span>
-                            </h2>
-                            <div className="space-y-4">
-                                {projects.map((project, idx) => (
-                                    <div key={idx} className="p-5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700/80 transition-all space-y-3">
-                                        <div className="flex flex-wrap justify-between items-start gap-2">
-                                            <div>
-                                                <span className="text-[10px] text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-2 py-0.5 rounded mono mr-2 uppercase font-semibold">
-                                                    {project.type}
-                                                </span>
-                                                <h3 className="inline font-bold text-slate-100 text-lg">{project.title}</h3>
-                                            </div>
-                                            <span className="text-xs text-slate-500 mono">{project.timeline}</span>
-                                        </div>
-                                        <ul className="space-y-1.5 text-sm text-slate-400 list-disc pl-4 marker:text-emerald-500">
-                                            {project.bullets.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
-                                        </ul>
-                                        <div className="flex flex-wrap gap-1.5 pt-1">
-                                            {project.tech.map((t, tIdx) => (
-                                                <span key={tIdx} className="text-[10px] text-slate-500 bg-slate-900 border border-slate-800 px-1.5 py-0.5 rounded mono">{t}</span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
+                    // Projects
+                    React.createElement('section', { id: "projects", className: "space-y-6 scroll-mt-20" },
+                        React.createElement('h2', { className: "text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2" },
+                            React.createElement(Icon, { name: "Cpu", className: "text-emerald-400" }), React.createElement('span', { className: "mono tracking-wide" }, "02. Security & Engineering Builds")
+                        ),
+                        React.createElement('div', { className: "space-y-4" },
+                            projects.map((proj, pIdx) => 
+                                React.createElement('div', { key: pIdx, className: "p-5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700/80 transition-all space-y-3" },
+                                    React.createElement('div', { className: "flex flex-wrap justify-between items-start gap-2" },
+                                        React.createElement('div', null,
+                                            React.createElement('span', { className: "text-[10px] text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-2 py-0.5 rounded mono mr-2 uppercase font-semibold" }, proj.type),
+                                            React.createElement('h3', { className: "inline font-bold text-slate-100 text-lg" }, proj.title)
+                                        ),
+                                        React.createElement('span', { className: "text-xs text-slate-500 mono" }, proj.timeline)
+                                    ),
+                                    React.createElement('ul', { className: "space-y-1.5 text-sm text-slate-400 list-disc pl-4 marker:text-emerald-500" },
+                                        proj.bullets.map((b, bIdx) => React.createElement('li', { key: bIdx }, b))
+                                    ),
+                                    React.createElement('div', { className: "flex flex-wrap gap-1.5 pt-1" },
+                                        proj.tech.map((t, tIdx) => React.createElement('span', { key: tIdx, className: "text-[10px] text-slate-500 bg-slate-900 border border-slate-800 px-1.5 py-0.5 rounded mono" }, t))
+                                    )
+                                )
+                            )
+                        )
+                    ),
 
-                        {/* Experience */}
-                        <section id="experience" className="space-y-6 scroll-mt-20">
-                            <h2 className="text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2">
-                                <Icon name="Briefcase" className="text-emerald-400" /> <span className="mono tracking-wide">03. Professional Timeline</span>
-                            </h2>
-                            <div className="space-y-6 relative before:absolute before:inset-0 before:right-auto before:left-3.5 before:w-px before:bg-slate-800">
-                                {experience.map((exp, idx) => (
-                                    <div key={idx} className="relative pl-8 group">
-                                        <div className="absolute left-2.5 top-1.5 w-2 h-2 rounded-full bg-slate-800 group-hover:bg-emerald-400 ring-4 ring-slate-950 transition-colors"></div>
-                                        <div className="flex flex-wrap justify-between items-start gap-1 mb-2">
-                                            <div>
-                                                <h3 className="font-bold text-slate-200">{exp.role}</h3>
-                                                <p className="text-xs text-emerald-400 mono">{exp.company}</p>
-                                            </div>
-                                            <span className="text-xs text-slate-500 mono">{exp.period}</span>
-                                        </div>
-                                        <ul className="space-y-1.5 text-sm text-slate-400 list-disc pl-4 marker:text-slate-600">
-                                            {exp.bullets.map((b, bIdx) => <li key={bIdx}>{b}</li>)}
-                                        </ul>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
+                    // Experience
+                    React.createElement('section', { id: "experience", className: "space-y-6 scroll-mt-20" },
+                        React.createElement('h2', { className: "text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2" },
+                            React.createElement(Icon, { name: "Briefcase", className: "text-emerald-400" }), React.createElement('span', { className: "mono tracking-wide" }, "03. Professional Timeline")
+                        ),
+                        React.createElement('div', { className: "space-y-6 relative before:absolute before:inset-0 before:right-auto before:left-3.5 before:w-px before:bg-slate-800" },
+                            experience.map((exp, eIdx) => 
+                                React.createElement('div', { key: eIdx, className: "relative pl-8 group" },
+                                    React.createElement('div', { className: "absolute left-2.5 top-1.5 w-2 h-2 rounded-full bg-slate-800 group-hover:bg-emerald-400 ring-4 ring-slate-950 transition-colors" }),
+                                    React.createElement('div', { className: "flex flex-wrap justify-between items-start gap-1 mb-2" },
+                                        React.createElement('div', null,
+                                            React.createElement('h3', { className: "font-bold text-slate-200" }, exp.role),
+                                            React.createElement('p', { className: "text-xs text-emerald-400 mono" }, exp.company)
+                                        ),
+                                        React.createElement('span', { className: "text-xs text-slate-500 mono" }, exp.period)
+                                    ),
+                                    React.createElement('ul', { className: "space-y-1.5 text-sm text-slate-400 list-disc pl-4 marker:text-slate-600" },
+                                        exp.bullets.map((b, bIdx) => React.createElement('li', { key: bIdx }, b))
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
 
-                        {/* Education & Achievements Combo */}
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <section className="space-y-4">
-                                <h2 className="text-lg font-bold flex items-center gap-2 border-b border-slate-800 pb-2">
-                                    <Icon name="GraduationCap" className="text-emerald-400" /> <span className="mono">04. Education</span>
-                                </h2>
-                                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-                                    <div className="flex justify-between text-xs text-slate-500 mono">
-                                        <span>B.Sc. Computer Science</span>
-                                        <span>2022 - 2025</span>
-                                    </div>
-                                    <h4 className="font-bold text-sm text-slate-200">Sri Muthukumaran Arts & Science College</h4>
-                                    <p className="text-xs text-slate-400">Madras University</p>
-                                </div>
-                            </section>
-
-                            <section className="space-y-4">
-                                <h2 className="text-lg font-bold flex items-center gap-2 border-b border-slate-800 pb-2">
-                                    <Icon name="Award" className="text-emerald-400" /> <span className="mono">05. Extras</span>
-                                </h2>
-                                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-400 space-y-2 mono">
-                                    <p>🏆 <span className="text-slate-200 font-semibold">NSS Camp Team Leader</span> - Managed multi-student teams.</p>
-                                    <p>🏅 <span className="text-slate-200 font-semibold">First Place winner</span> in multiple Inter-college artistic categories.</p>
-                                </div>
-                            </section>
-                        </div>
-
-                    </main>
-
-                    {/* Footer */}
-                    <footer className="border-t border-slate-900 bg-slate-950/40 py-6 text-center text-[11px] text-slate-600 mono">
-                        <div>© Immanuvel S. Powered securely by React + Tailwind via Vercel.</div>
-                    </footer>
-                </div>
+                // Footer
+                React.createElement('footer', { className: "border-t border-slate-900 bg-slate-950/40 py-6 text-center text-[11px] text-slate-600 mono" },
+                    React.createElement('div', null, `© Immanuvel S. Powered securely by React + Tailwind via Vercel.`)
+                )
             );
         }
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+        root.render(React.createElement(App));
     </script>
 </body>
 </html>
