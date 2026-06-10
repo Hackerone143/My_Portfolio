@@ -1328,3 +1328,58 @@ textarea.form-input {
 body:hover .pointer-glow {
   opacity: 1;
 }
+
+/* ==========================================================================
+   ADDITIONAL RESPONSIVE OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  section {
+    padding: 4.5rem 0;
+  }
+  
+  .navbar {
+    height: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  section {
+    padding: 3.5rem 0;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 0.8rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .hero-ctas .btn {
+    width: 100%;
+  }
+  
+  .filter-tabs {
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
