@@ -594,30 +594,28 @@ header.scrolled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   z-index: 3;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1px solid var(--bg-primary);
 }
 
-.security-badge-icon {
-  width: 72px;
-  height: 72px;
-  color: var(--accent);
-  filter: drop-shadow(0 0 8px rgba(255, 90, 0, 0.4));
-  animation: pulse-icon 3s ease-in-out infinite;
+.scanner-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+  filter: grayscale(100%) brightness(0.8) contrast(1.15) sepia(100%) hue-rotate(-15deg) saturate(320%);
+  transition: all 0.4s var(--transition-bezier);
 }
 
-@keyframes pulse-icon {
-  0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 90, 0, 0.3)); }
-  50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 90, 0, 0.6)); }
-  100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 90, 0, 0.3)); }
-}
-
-.scanner-text-large {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
-  text-align: center;
+.scanner-card:hover .scanner-avatar-img {
+  opacity: 0.95;
+  transform: scale(1.04);
+  filter: grayscale(100%) brightness(1.05) contrast(1.25) sepia(100%) hue-rotate(-15deg) saturate(380%);
 }
 
 .scanner-card-footer {
@@ -793,19 +791,52 @@ header.scrolled {
 .project-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-secondary);
-  padding: 2rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.5rem;
   transition: all 0.3s var(--transition-bezier);
   position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
   border-color: var(--accent);
   transform: translate(-4px, -4px);
   box-shadow: 6px 6px 0px var(--accent);
+}
+
+.project-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-grow: 1;
+}
+
+.project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--bg-primary);
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s var(--transition-bezier);
+  filter: grayscale(100%) brightness(0.8) contrast(1.1) sepia(100%) hue-rotate(-15deg) saturate(220%);
+  opacity: 0.8;
+}
+
+.project-card:hover .project-card-image {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: grayscale(100%) brightness(0.95) contrast(1.2) sepia(100%) hue-rotate(-15deg) saturate(280%);
 }
 
 /* For filtering transition */
