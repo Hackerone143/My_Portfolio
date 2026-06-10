@@ -1,237 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immanuvel S | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #070a13; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immanuvel S | Cybersecurity Analyst & Software Developer</title>
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description" content="Professional portfolio of Immanuvel S, a Cybersecurity Analyst and Software Developer specializing in penetration testing, vulnerability assessments, and secure software development.">
+  <meta name="keywords" content="Cybersecurity Analyst, Software Developer, Penetration Testing, Vulnerability Assessment, Java, Python, Security Audits, Portfolio">
+  <meta name="author" content="Immanuvel S">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/Hackerone143">
+  <meta property="og:title" content="Immanuvel S | Cybersecurity Analyst & Software Developer">
+  <meta property="og:description" content="Explore cybersecurity projects, secure development tools, and engineering works built by Immanuvel S.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Hackerone143/My_Portfolio/main/cover_placeholder.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Immanuvel S | Cybersecurity & Dev Portfolio">
+  <meta property="twitter:description" content="Explore cybersecurity projects, secure development tools, and engineering works built by Immanuvel S.">
+
+  <!-- External Stylesheets (CSS variables, Brutalist layouts) -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="text-slate-200 antialiased selection:bg-emerald-500 selection:text-slate-900">
+<body>
 
-    <div id="root"></div>
+  <!-- Sticky Header & Navbar -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo" id="nav-logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">IMMANUVEL_S://SEC_PORTFOLIO</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link active">// about</a></li>
+          <li><a href="#skills" class="nav-link">// skills</a></li>
+          <li><a href="#projects" class="nav-link">// projects</a></li>
+          <li><a href="#experience" class="nav-link">// experience</a></li>
+          <li><a href="#contact" class="nav-link">// contact</a></li>
+        </ul>
+      </nav>
 
-    <!-- React, ReactDOM, and Lucide Icons loaded via ES Modules (No Babel compiler needed) -->
-    <script type="module">
-        import React from 'https://esm.sh/react@18.2.0';
-        import { createRoot } from 'https://esm.sh/react-dom@18.2.0/client';
-        import * as lucide from 'https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0';
+      <!-- Hamburger Menu Button (Mobile) -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
 
-        // Icon Helper Component
-        const Icon = ({ name, className = "w-5 h-5" }) => {
-            const camelCaseName = name.charAt(0).toUpperCase() + name.slice(1);
-            const LucideIcon = lucide[camelCaseName];
-            return LucideIcon ? React.createElement(LucideIcon, { className }) : null;
-        };
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#about" class="nav-link">// about</a>
+    <a href="#skills" class="nav-link">// skills</a>
+    <a href="#projects" class="nav-link">// projects</a>
+    <a href="#experience" class="nav-link">// experience</a>
+    <a href="#contact" class="nav-link">// contact</a>
+  </div>
 
-        function App() {
-            const profile = {
-                name: "IMMANUVEL S",
-                title: "Cybersecurity Analyst & Software Developer",
-                location: "Chennai, Tamil Nadu 600069",
-                email: "simmanuvel73@gmail.com",
-                phone: "+91 9092463152",
-                github: "https://github.com/Hackerone143",
-                linkedin: "https://linkedin.com/in/immanuvel-s-a6663b297",
-                summary: "Cybersecurity professional and Computer Science graduate with hands-on expertise in penetration testing, vulnerability assessment, and web application security analysis using Burp Suite, Nmap, Nessus, Wireshark, and Metasploit. Experienced in Python, Java, and PHP development, with a track record of delivering security-focused software projects."
-            };
+  <!-- Main Content Areas -->
+  <main>
 
-            const skills = [
-                { category: "Security Tools", items: ["Burp Suite", "Nmap", "Nessus", "Wireshark", "Metasploit"] },
-                { category: "Languages", items: ["Python", "Java", "C", "C++", "PHP", "SQL", "MySQL"] },
-                { category: "Domains", items: ["Penetration Testing", "Vulnerability Assessment", "Network Security", "Malware Analysis"] },
-                { category: "Operating Systems", items: ["Linux (Kali, Ubuntu)", "Windows"] },
-                { category: "Databases & Tools", items: ["MySQL", "Oracle", "MongoDB", "Git", "Firebase", "OpenSSH", "OpenCV"] }
-            ];
+    <!-- 1. HERO SECTION -->
+    <section id="about" class="reveal">
+      <div class="bg-grid"></div>
+      <div class="container hero-wrapper">
+        <div class="hero-content">
+          <div class="hero-tagline">Secure Dev Operations Ready</div>
+          <h1 class="hero-title">IMMANUVEL S</h1>
+          <h2 class="hero-subtitle text-accent">> Cybersecurity Analyst & Software Developer</h2>
+          <p class="hero-desc">
+            Computer Science graduate and cybersecurity professional with hands-on expertise in penetration testing, vulnerability assessments, and web application security analysis. Experienced in Python, Java, and PHP engineering, delivering tamper-evident software systems and cryptographic architectures.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary" id="hero-cta-contact">Get In Touch</a>
+            <a href="#projects" class="btn btn-secondary" id="hero-cta-work">View Security builds</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            const projects = [
-                {
-                    title: "Remote Access Cybersecurity Software",
-                    timeline: "Feb 2024 - Present",
-                    tech: ["Python", "OpenCV", "OpenSSH", "Firebase", "Hashing Algorithms"],
-                    bullets: [
-                        "Engineered a secure remote device access solution integrating geolocation tracking, camera access, and real-time system monitoring.",
-                        "Implemented SHA-based hashing and SSH tunnelling to enforce authentication and encryption across all remote sessions.",
-                        "Designed security protocol layer to restrict access to authorised users only, preventing unauthorised device access."
-                    ],
-                    type: "Sec/Dev"
-                },
-                {
-                    title: "Web Vulnerability Analysis",
-                    timeline: "Nov 2023 - Jan 2024",
-                    tech: ["Burp Suite", "OWASP Top 10 Methodology"],
-                    bullets: [
-                        "Conducted end-to-end penetration testing of web applications, identifying vulnerabilities including XSS, IDOR, SQL Injection, and broken access control.",
-                        "Documented risk levels and generated structured remediation reports with actionable mitigation strategies.",
-                        "Applied ethical hacking methodology including reconnaissance, scanning, exploitation, and post-exploitation reporting."
-                    ],
-                    type: "Security"
-                },
-                {
-                    title: "Data Integrity with Auditing System",
-                    timeline: "Sep 2024 - Feb 2025",
-                    tech: ["JDK", "MySQL", "Cryptography"],
-                    bullets: [
-                        "Built a full-stack auditing system ensuring data accuracy and reliability by tracking and flagging unauthorised changes.",
-                        "Integrated cryptographic techniques to protect data at rest, providing tamper-evidence and audit trail functionality."
-                    ],
-                    type: "Software"
-                }
-            ];
+    <!-- 2. ABOUT PROFILE / SPLIT GRID -->
+    <section class="reveal">
+      <div class="container">
+        <div class="about-grid">
+          
+          <!-- Left side detail -->
+          <div class="about-details">
+            <span class="section-label">00 // PROFILE DETAILS</span>
+            <h2 class="about-heading">CORE EXPERTISE & SOFT SKILLS</h2>
+            <p>
+              I bridge the gap between software development and deep technical security analysis. My core goal is to build software with active mitigation of OWASP Top 10 vulnerabilities and ensure data integrity under adversarial conditions.
+            </p>
+            <p>
+              By leveraging scanning diagnostics alongside backend software engineering, I perform comprehensive evaluations of networks and application layers to safeguard sensitive details.
+            </p>
+            
+            <ul class="about-bullets">
+              <li>Penetration Testing & Reporting</li>
+              <li>Cryptographic Auditing Systems</li>
+              <li>Secure Remote Access Tunneling</li>
+              <li>Vulnerability Vulnerability Scanning</li>
+              <li>Dynamic Vulnerability Remediation</li>
+              <li>Network Traffic Analysis</li>
+            </ul>
+          </div>
+          
+          <!-- Right side outline frame + High Tech Scanner Matrix -->
+          <div class="about-visual-container">
+            <div class="scanner-card">
+              <div class="scanner-grid"></div>
+              <div class="scanner-line"></div>
+              
+              <div class="scanner-card-header">
+                <div class="scanner-status">
+                  <span class="scanner-status-dot"></span>
+                  <span>System Active</span>
+                </div>
+                <div class="mono text-accent" style="font-size: 0.7rem;">SEC_NET_CON: 1</div>
+              </div>
+              
+              <div class="scanner-card-body">
+                <!-- Lock Shield Graphic SVG -->
+                <svg class="security-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M12 8v4"/>
+                  <path d="M12 16h.01"/>
+                </svg>
+                <div class="scanner-text-large">SHIELD ONLINE</div>
+              </div>
+              
+              <div class="scanner-card-footer">
+                <div class="console-line" id="console-line-text">> SEC_PORTFOLIO INIT...</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
 
-            const experience = [
-                {
-                    role: "Customer Support Associate",
-                    company: "Amazon (via Sutherland Global Services / Prompt Personnel)",
-                    period: "Oct 2025 - Apr 2026",
-                    bullets: [
-                        "Delivered real-time live chat support to North American Amazon customers, resolving order, account, and technical queries.",
-                        "Managed simultaneous chat queues across multiple cases, developing strong multitasking and written communication skills.",
-                        "Collaborated with internal teams to escalate security-sensitive account issues, applying security awareness in a customer-facing setting."
-                    ]
-                },
-                {
-                    role: "Cybersecurity Intern",
-                    company: "Skill Forge Company / TN Skill (Cybersecurity National Level Event)",
-                    period: "2024 (Short-Term)",
-                    bullets: [
-                        "Participated in a national-level cybersecurity event and completed hands-on internship covering real-world threat analysis.",
-                        "Gained exposure to Cyber Crime investigation techniques and live security scenarios under industry supervision."
-                    ]
-                }
-            ];
+    <!-- 3. SKILLS & SERVICES GRID -->
+    <section id="skills" class="reveal">
+      <div class="container">
+        <span class="section-label">01 // SKILLS MATRIX</span>
+        <h2 class="section-title">TECHNICAL SERVICES & TOOLS</h2>
+        
+        <div class="skills-grid">
+          
+          <!-- Card 1: Security Tools -->
+          <div class="skill-card">
+            <span class="skill-card-num">01</span>
+            <!-- Shield SVG -->
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <h3 class="skill-title">Security Tools</h3>
+            <ul class="skill-list">
+              <li>Burp Suite Professional</li>
+              <li>Nmap Port Scanner</li>
+              <li>Nessus Vulnerability</li>
+              <li>Wireshark packet analysis</li>
+              <li>Metasploit Framework</li>
+            </ul>
+          </div>
+          
+          <!-- Card 2: Languages -->
+          <div class="skill-card">
+            <span class="skill-card-num">02</span>
+            <!-- Code SVG -->
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <h3 class="skill-title">Languages</h3>
+            <ul class="skill-list">
+              <li>Python Development</li>
+              <li>Java SE Engineering</li>
+              <li>C / C++ Programming</li>
+              <li>PHP Scripting</li>
+              <li>SQL / MySQL DB Queries</li>
+            </ul>
+          </div>
+          
+          <!-- Card 3: Domains -->
+          <div class="skill-card">
+            <span class="skill-card-num">03</span>
+            <!-- Target SVG -->
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <h3 class="skill-title">Security Domains</h3>
+            <ul class="skill-list">
+              <li>Penetration Testing</li>
+              <li>Vulnerability Assessment</li>
+              <li>Network Security Audits</li>
+              <li>Malware Threat Analysis</li>
+              <li>OWASP Top 10 Mitigation</li>
+            </ul>
+          </div>
 
-            return React.createElement('div', { className: "min-h-screen flex flex-col justify-between" },
-                // Header
-                React.createElement('header', { className: "border-b border-slate-800/80 bg-slate-950/70 backdrop-blur sticky top-0 z-50" },
-                    React.createElement('div', { className: "max-w-4xl mx-auto px-6 py-4 flex justify-between items-center" },
-                        React.createElement('div', { className: "flex items-center space-x-2" },
-                            React.createElement('span', { className: "h-2 w-2 rounded-full bg-emerald-500 animate-pulse" }),
-                            React.createElement('span', { className: "mono text-xs tracking-wider font-bold text-emerald-400" }, "IMMANUVEL_S://SEC_PORTFOLIO")
-                        ),
-                        React.createElement('nav', { className: "flex space-x-6 text-xs font-medium text-slate-400 mono" },
-                            React.createElement('a', { href: "#about", className: "hover:text-emerald-400 transition-colors" }, "./about"),
-                            React.createElement('a', { href: "#skills", className: "hover:text-emerald-400 transition-colors" }, "./skills"),
-                            React.createElement('a', { href: "#projects", className: "hover:text-emerald-400 transition-colors" }, "./projects"),
-                            React.createElement('a', { href: "#experience", className: "hover:text-emerald-400 transition-colors" }, "./experience")
-                        )
-                    )
-                ),
+          <!-- Card 4: Operating Systems -->
+          <div class="skill-card">
+            <span class="skill-card-num">04</span>
+            <!-- OS SVG -->
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <h3 class="skill-title">OS Platforms</h3>
+            <ul class="skill-list">
+              <li>Kali Linux Red-Teaming</li>
+              <li>Ubuntu Server Admin</li>
+              <li>Linux Command Shells</li>
+              <li>Windows System Security</li>
+              <li>Bash Script Automation</li>
+            </ul>
+          </div>
 
-                // Main Container
-                React.createElement('main', { className: "max-w-4xl mx-auto px-6 py-12 flex-grow space-y-24" },
-                    
-                    // About
-                    React.createElement('section', { id: "about", className: "py-4 space-y-6" },
-                        React.createElement('div', { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 text-xs font-medium mono" },
-                            React.createElement(Icon, { name: "ShieldAlert", className: "w-3.5 h-3.5" }), " Ready for Ethical Hacking & Secure Dev Operations"
-                        ),
-                        React.createElement('h1', { className: "text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight" }, profile.name),
-                        React.createElement('h2', { className: "text-xl font-semibold text-emerald-400 mono" }, `> ${profile.title}`),
-                        React.createElement('p', { className: "text-slate-400 leading-relaxed max-w-3xl" }, profile.summary),
-                        
-                        React.createElement('div', { className: "flex flex-wrap gap-4 pt-2 text-xs text-slate-400 mono" },
-                            React.createElement('span', { className: "flex items-center gap-1.5" }, React.createElement(Icon, { name: "MapPin", className: "w-3.5 h-3.5 text-slate-500" }), profile.location),
-                            React.createElement('a', { href: `mailto:${profile.email}`, className: "flex items-center gap-1.5 hover:text-emerald-400" }, React.createElement(Icon, { name: "Mail", className: "w-3.5 h-3.5 text-slate-500" }), profile.email),
-                            React.createElement('span', { className: "flex items-center gap-1.5" }, React.createElement(Icon, { name: "Phone", className: "w-3.5 h-3.5 text-slate-500" }), profile.phone)
-                        ),
+          <!-- Card 5: Databases & Tools -->
+          <div class="skill-card">
+            <span class="skill-card-num">05</span>
+            <!-- Database SVG -->
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+            </svg>
+            <h3 class="skill-title">Databases & Utils</h3>
+            <ul class="skill-list">
+              <li>MySQL / Mongo Databases</li>
+              <li>Git Versioning Control</li>
+              <li>Firebase Cloud Tunnels</li>
+              <li>OpenSSH Server Shells</li>
+              <li>OpenCV Vision Computing</li>
+            </ul>
+          </div>
 
-                        React.createElement('div', { className: "flex gap-3 pt-2" },
-                            React.createElement('a', { href: profile.github, target: "_blank", className: "flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all text-xs mono" },
-                                React.createElement(Icon, { name: "Github", className: "w-4 h-4" }), " GitHub"
-                            ),
-                            React.createElement('a', { href: profile.linkedin, target: "_blank", className: "flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all text-xs mono" },
-                                React.createElement(Icon, { name: "Linkedin", className: "w-4 h-4" }), " LinkedIn"
-                            )
-                        )
-                    ),
+          <!-- Card 6: Certifications (Extra Premium Value Add) -->
+          <div class="skill-card">
+            <span class="skill-card-num">06</span>
+            <!-- Award SVG -->
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"/>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+            </svg>
+            <h3 class="skill-title">Security Mindset</h3>
+            <ul class="skill-list">
+              <li>Ethical Hacking Flow</li>
+              <li>Remediation Mapping</li>
+              <li>Risk Matrix Reporting</li>
+              <li>Secure Code Audits</li>
+              <li>Incident Log Diagnostics</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </section>
 
-                    // Skills
-                    React.createElement('section', { id: "skills", className: "space-y-6 scroll-mt-20" },
-                        React.createElement('h2', { className: "text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2" },
-                            React.createElement(Icon, { name: "Terminal", className: "text-emerald-400" }), React.createElement('span', { className: "mono tracking-wide" }, "01. Technical Skills Matrix")
-                        ),
-                        React.createElement('div', { className: "grid sm:grid-cols-2 md:grid-cols-3 gap-4" },
-                            skills.map((group, gIdx) => 
-                                React.createElement('div', { key: gIdx, className: "p-4 rounded-xl bg-slate-950 border border-slate-800/80" },
-                                    React.createElement('h3', { className: "font-bold text-xs uppercase tracking-wider text-slate-400 mb-3 mono flex items-center gap-1.5" },
-                                        React.createElement('span', { className: "w-1.5 h-1.5 rounded-full bg-emerald-500" }), group.category
-                                    ),
-                                    React.createElement('div', { className: "flex flex-wrap gap-1.5" },
-                                        group.items.map((item, iIdx) => 
-                                            React.createElement('span', { key: iIdx, className: "text-[11px] font-medium text-slate-300 bg-slate-900 border border-slate-800 px-2 py-0.5 rounded mono" }, item)
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    ),
+    <!-- 4. PROJECTS SHOWCASE -->
+    <section id="projects" class="reveal">
+      <div class="container">
+        
+        <div class="projects-header-wrapper">
+          <div>
+            <span class="section-label">02 // RESEARCH & BUILDS</span>
+            <h2 class="section-title" style="margin-bottom: 0;">FEATURED PROJECTS</h2>
+          </div>
+          
+          <!-- Category Filter Tabs -->
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Labs</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="software">Software</button>
+          </div>
+        </div>
+        
+        <div class="projects-grid">
+          
+          <!-- Project Card 1 -->
+          <div class="project-card" data-category="security software">
+            <div class="project-info-top">
+              <div class="project-meta">
+                <span class="project-type-tag">Sec/Dev</span>
+                <span class="project-timeline">Feb 2024 - Present</span>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <h3 class="project-title">Remote Access Cybersecurity Software</h3>
+              <ul class="project-bullets">
+                <li>Engineered a secure remote device access solution integrating geolocation tracking, camera access, and real-time system monitoring.</li>
+                <li>Implemented SHA-based hashing and SSH tunneling to enforce authentication and encryption across remote sessions.</li>
+                <li>Designed security protocol layers to restrict unauthorized device access.</li>
+              </ul>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">OpenSSH</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Hashing</span>
+            </div>
+            
+            <div class="project-link-wrapper">
+              <a href="https://github.com/Hackerone143" target="_blank" class="project-link">
+                View Lab Repository
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project Card 2 -->
+          <div class="project-card" data-category="security">
+            <div class="project-info-top">
+              <div class="project-meta">
+                <span class="project-type-tag">Security</span>
+                <span class="project-timeline">Nov 2023 - Jan 2024</span>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <h3 class="project-title">Web Vulnerability Analysis</h3>
+              <ul class="project-bullets">
+                <li>Conducted end-to-end penetration testing of web applications, identifying vulnerabilities including XSS, IDOR, and SQL Injection.</li>
+                <li>Documented severity levels and generated structured remediation reports with actionable mitigation strategies.</li>
+                <li>Applied ethical hacking methodology (reconnaissance, scanning, exploitation, post-exploitation reporting).</li>
+              </ul>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag">Burp Suite</span>
+              <span class="tech-tag">Nmap</span>
+              <span class="tech-tag">OWASP Top 10</span>
+              <span class="tech-tag">Vulnerability Audit</span>
+            </div>
+            
+            <div class="project-link-wrapper">
+              <a href="https://github.com/Hackerone143" target="_blank" class="project-link">
+                View Vuln Reports
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project Card 3 -->
+          <div class="project-card" data-category="software">
+            <div class="project-info-top">
+              <div class="project-meta">
+                <span class="project-type-tag">Software</span>
+                <span class="project-timeline">Sep 2024 - Feb 2025</span>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <h3 class="project-title">Data Integrity with Auditing System</h3>
+              <ul class="project-bullets">
+                <li>Built a full-stack auditing system ensuring data accuracy and reliability by tracking and flagging unauthorized changes.</li>
+                <li>Integrated cryptographic techniques to protect data at rest, providing tamper-evidence and audit trail functionality.</li>
+                <li>Engineered clean relational database query transactions to log modifications.</li>
+              </ul>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag">JDK (Java)</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Cryptography</span>
+              <span class="tech-tag">Database Auditing</span>
+            </div>
+            
+            <div class="project-link-wrapper">
+              <a href="https://github.com/Hackerone143" target="_blank" class="project-link">
+                View Audit Engine
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
 
-                    // Projects
-                    React.createElement('section', { id: "projects", className: "space-y-6 scroll-mt-20" },
-                        React.createElement('h2', { className: "text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2" },
-                            React.createElement(Icon, { name: "Cpu", className: "text-emerald-400" }), React.createElement('span', { className: "mono tracking-wide" }, "02. Security & Engineering Builds")
-                        ),
-                        React.createElement('div', { className: "space-y-4" },
-                            projects.map((proj, pIdx) => 
-                                React.createElement('div', { key: pIdx, className: "p-5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700/80 transition-all space-y-3" },
-                                    React.createElement('div', { className: "flex flex-wrap justify-between items-start gap-2" },
-                                        React.createElement('div', null,
-                                            React.createElement('span', { className: "text-[10px] text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-2 py-0.5 rounded mono mr-2 uppercase font-semibold" }, proj.type),
-                                            React.createElement('h3', { className: "inline font-bold text-slate-100 text-lg" }, proj.title)
-                                        ),
-                                        React.createElement('span', { className: "text-xs text-slate-500 mono" }, proj.timeline)
-                                    ),
-                                    React.createElement('ul', { className: "space-y-1.5 text-sm text-slate-400 list-disc pl-4 marker:text-emerald-500" },
-                                        proj.bullets.map((b, bIdx) => React.createElement('li', { key: bIdx }, b))
-                                    ),
-                                    React.createElement('div', { className: "flex flex-wrap gap-1.5 pt-1" },
-                                        proj.tech.map((t, tIdx) => React.createElement('span', { key: tIdx, className: "text-[10px] text-slate-500 bg-slate-900 border border-slate-800 px-1.5 py-0.5 rounded mono" }, t))
-                                    )
-                                )
-                            )
-                        )
-                    ),
+    <!-- 5. EXPERIENCE / TIMELINE -->
+    <section id="experience" class="reveal">
+      <div class="container">
+        <span class="section-label">03 // HISTORY</span>
+        <h2 class="section-title">PROFESSIONAL TIMELINE</h2>
+        
+        <div class="timeline-wrapper">
+          <div class="timeline-track-active"></div>
+          
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date-side">
+                <span>OCT 2025 - APR 2026</span>
+              </div>
+              <div class="timeline-info-side">
+                <h3 class="timeline-role">Customer Support Associate</h3>
+                <span class="timeline-company">Amazon (via Sutherland / Prompt Personnel)</span>
+                <ul class="timeline-bullets">
+                  <li>Delivered real-time live chat support to North American Amazon customers, resolving order, account, and technical queries.</li>
+                  <li>Managed simultaneous chat queues across multiple cases, developing strong multitasking and written communication skills.</li>
+                  <li>Collaborated with internal teams to escalate security-sensitive account issues, applying security awareness in a customer-facing setting.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date-side">
+                <span>2024 (SHORT-TERM)</span>
+              </div>
+              <div class="timeline-info-side">
+                <h3 class="timeline-role">Cybersecurity Intern</h3>
+                <span class="timeline-company">Skill Forge Company / TN Skill</span>
+                <ul class="timeline-bullets">
+                  <li>Participated in a national-level cybersecurity event and completed hands-on internship covering real-world threat analysis.</li>
+                  <li>Gained exposure to Cyber Crime investigation techniques and live security scenarios under industry supervision.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
 
-                    // Experience
-                    React.createElement('section', { id: "experience", className: "space-y-6 scroll-mt-20" },
-                        React.createElement('h2', { className: "text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-2" },
-                            React.createElement(Icon, { name: "Briefcase", className: "text-emerald-400" }), React.createElement('span', { className: "mono tracking-wide" }, "03. Professional Timeline")
-                        ),
-                        React.createElement('div', { className: "space-y-6 relative before:absolute before:inset-0 before:right-auto before:left-3.5 before:w-px before:bg-slate-800" },
-                            experience.map((exp, eIdx) => 
-                                React.createElement('div', { key: eIdx, className: "relative pl-8 group" },
-                                    React.createElement('div', { className: "absolute left-2.5 top-1.5 w-2 h-2 rounded-full bg-slate-800 group-hover:bg-emerald-400 ring-4 ring-slate-950 transition-colors" }),
-                                    React.createElement('div', { className: "flex flex-wrap justify-between items-start gap-1 mb-2" },
-                                        React.createElement('div', null,
-                                            React.createElement('h3', { className: "font-bold text-slate-200" }, exp.role),
-                                            React.createElement('p', { className: "text-xs text-emerald-400 mono" }, exp.company)
-                                        ),
-                                        React.createElement('span', { className: "text-xs text-slate-500 mono" }, exp.period)
-                                    ),
-                                    React.createElement('ul', { className: "space-y-1.5 text-sm text-slate-400 list-disc pl-4 marker:text-slate-600" },
-                                        exp.bullets.map((b, bIdx) => React.createElement('li', { key: bIdx }, b))
-                                    )
-                                )
-                            )
-                        )
-                    )
-                ),
+    <!-- 6. CONTACT & FOOTER -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <span class="section-label">04 // COMMUNICATIONS</span>
+        <h2 class="section-title">GET IN TOUCH</h2>
+        
+        <div class="contact-grid">
+          
+          <!-- Contact Left Info -->
+          <div class="contact-left">
+            <p class="contact-desc">
+              Looking for a cybersecurity analyst or software developer with a strong focus on security best practices? Let's connect on a secure tunnel. Email me or find me on my social nodes.
+            </p>
+            
+            <a href="mailto:simmanuvel73@gmail.com" class="contact-big-email">simmanuvel73@gmail.com</a>
+            
+            <div class="contact-meta-info">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +91 9092463152
+              </span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                Chennai, Tamil Nadu 600069
+              </span>
+            </div>
+            
+            <div class="social-links">
+              <!-- Github Link -->
+              <a href="https://github.com/Hackerone143" target="_blank" class="social-icon" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <!-- Linkedin Link -->
+              <a href="https://linkedin.com/in/immanuvel-s-a6663b297" target="_blank" class="social-icon" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <!-- YouTube (Standard link using SVG) -->
+              <a href="https://youtube.com/" target="_blank" class="social-icon" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Contact Right Form -->
+          <div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-status" id="form-status"></div>
+              
+              <div class="form-group">
+                <label for="form-name" class="form-label">Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. john@example.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="e.g. Collaboration Request" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message</label>
+                <textarea id="form-message" class="form-input" placeholder="Your transmission details..." required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Secure Submit</button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
 
-                // Footer
-                React.createElement('footer', { className: "border-t border-slate-900 bg-slate-950/40 py-6 text-center text-[11px] text-slate-600 mono" },
-                    React.createElement('div', null, `© Immanuvel S. Powered securely by React + Tailwind via Vercel.`)
-                )
-            );
-        }
+  </main>
 
-        const root = createRoot(document.getElementById('root'));
-        root.render(React.createElement(App));
-    </script>
+  <!-- Footer Bottom -->
+  <footer class="footer-bottom">
+    <div class="container">
+      <p>© 2026 Immanuvel S. Styled strictly under the Black & Orange Bold Creative Portfolio guidelines.</p>
+    </div>
+  </footer>
+
+  <!-- Page Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
